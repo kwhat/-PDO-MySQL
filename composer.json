@@ -1,0 +1,54 @@
+{
+    "name": "faapz/pdo-mysql",
+    "description": "MySQL Server extension to faapz/pdo",
+    "type": "library",
+    "keywords": ["faapz", "pdo", "mysql", "sql"],
+    "homepage": "https://github.com/FaaPz/PDO-MySQL",
+    "license": "MIT",
+    "authors": [
+        {
+            "name": "Fabian de Laender",
+            "email": "fabian@faapz.productions",
+            "homepage": "https://faapz.productions",
+            "role": "Owner"
+        },
+        {
+            "name": "Alexander Barker",
+            "email": "alex@1stleg.com",
+            "homepage": "https://github.com/kwhat/",
+            "role": "Collaborator"
+        }
+    ],
+    "support": {
+        "issues": "https://github.com/FaaPz/PDO-MySQL/issues",
+        "docs": "https://github.com/FaaPz/PDO-MySQL/blob/master/docs/README.md"
+    },
+    "require": {
+        "php": ">=7.2.0",
+        "ext-pdo": "*",
+        "faapz/pdo": "ansi-dev"
+    },
+    "require-dev": {
+        "phan/phan": "^2.2",
+        "phpunit/phpunit": "^8",
+        "squizlabs/php_codesniffer": "3.*"
+    },
+    "autoload": {
+        "psr-4": {
+            "FaaPz\\PDO\\MySQL\\": "src/"
+        }
+    },
+    "autoload-dev": {
+        "psr-4": {
+            "FaaPz\\PDO\\MySQL\\Test\\": "tests/"
+        }
+    },
+    "minimum-stability": "stable",
+    "scripts": {
+        "lint": [
+            "phpcs -s --standard=phpcs.xml",
+            "phan"
+        ],
+        "test": "phpunit -v --coverage-html build/coverage tests/"
+    }
+}
